@@ -1,7 +1,7 @@
 # pico-stepper-counter
-Simple project which counts steps send to stepper motors.
+Simple project for Raspberry Pi PICO, which counts steps send to stepper motors.
 
-If connected to an Arduino running GRBL, it counts the pulses send to the stepper motors. The position calculated from these pulses is output over the USB connection.
+If for example connected to an Arduino running GRBL, it counts the pulses send to the stepper motors. The position calculated from these pulses is output over the USB connection.
 
 The number of steps per mm must be configured in the const MM_PER_STEP. When using 40 steps per mm, each step is 0.025 mm (1000 / 40).
 
