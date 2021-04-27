@@ -19,6 +19,7 @@ add_executable(
 target_link_libraries(
     stepper-counter
     pico_stdlib
+    pico_multicore
 )
 
 # enable usb output, disable uart output
