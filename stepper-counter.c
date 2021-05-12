@@ -166,9 +166,19 @@ int main() {
 
     multicore_launch_core1(core1Code);
 
+    int x = x_step_count, y = y_step_count, z = z_step_count, a = a_step_count, b = b_step_count, c = c_step_count;
+
     // Send the position of all three axis to the virtual USB Serialport.
     while (true) {
-        printf("<Pos:%d,%d,%d,%d,%d,%d>\n", x_step_count, y_step_count, z_step_count, a_step_count, b_step_count, c_step_count);
+        if ((x != x_step_count) || (y != y_step_count) || (z != z_step_count) || (a != a_step_count) || (b != b_step_count) || (c != c_step_count)) {
+            printf("<Pos:%d,%d,%d,%d,%d,%d>\n", x_step_count, y_step_count, z_step_count, a_step_count, b_step_count, c_step_count);
+            x = x_step_count;
+            y = y_step_count;
+            z = z_step_count;
+            a = a_step_count;
+            b = b_step_count;
+            c = c_step_count;
+        }
 
         // Wait for 16 msec (±60 Hz).
         // Don't use sleep_ms, it will send the processor into low power mode, causing it to miss steps.
